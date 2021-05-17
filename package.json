@@ -1,0 +1,26 @@
+{
+  "name": "Workshop",
+  "version": "1.0.0",
+  "description": "Система за създадване, управление, и попълване на тестове със свободен достъп.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NikolayVel/quizes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NikolayVel/quizes/issues"
+  },
+  "homepage": "https://github.com/NikolayVel/quizes#readme",
+  "dependencies": {
+    "lit-html": "1.4.1",
+    "page": "1.11.6"
+  }
+}
+
+initialization 
