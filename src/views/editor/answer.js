@@ -4,14 +4,12 @@ import {html, render} from '../../lib.js'
 
 const radioEdit = (questionIndex, index, answer, checked) => html`
 <div class="editor-input">
-
-<label class="radio">
-    <input class="input" type="radio" name=${`question-${questionIndex}`} value=${index} ?checked=${checked} />
-    <i class="fas fa-check-circle"></i>
-</label>
-
-<input class="input" type="text" name=${`answer-${index}`} .value=${answer} />
-<button data-index=${index} class="input submit action"><i class="fas fa-trash-alt"></i></button>
+    <label class="radio">
+        <input class="input" type="radio" name=${`question-${questionIndex}`} value=${index} ?checked=${checked} />
+        <i class="fas fa-check-circle"></i>
+    </label>
+    <input class="input" type="text" name=${`answer-${index}`} .value=${answer} />
+    <button data-index=${index} class="input submit action"><i class="fas fa-trash-alt"></i></button>
 </div>`;
 
 export function createAnswerList(answers, questionIndex, correctIndex) {
@@ -41,9 +39,9 @@ export function createAnswerList(answers, questionIndex, correctIndex) {
         current.push('');
         update();
     }
-
+    
     function onDelete(e){
-        e.preventDefault();
+        
         let index;
         if (e.target.tagName == 'BUTTON') {
             index = e.target.dataset.index
@@ -52,6 +50,7 @@ export function createAnswerList(answers, questionIndex, correctIndex) {
             index = e.target.parentNode.dataset.index
         }
         if (index != undefined) {
+            e.preventDefault();
             current.splice(index,1);
             update();
         }
