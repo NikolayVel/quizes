@@ -13,7 +13,7 @@ const radioEdit = (questionIndex, index, answer, checked) => html`
 </div>`;
 
 export function createAnswerList(answers, questionIndex, correctIndex) {
-    const current = answers.slice()
+    const current = answers.slice() // makes a copy of the original list to keep it from temporary changes
 
     const element = document.createElement('div');
     element.addEventListener('click', onDelete);
@@ -50,6 +50,7 @@ export function createAnswerList(answers, questionIndex, correctIndex) {
             index = e.target.parentNode.dataset.index
         }
         if (index != undefined) {
+            
             e.preventDefault();
             current.splice(index,1);
             update();
